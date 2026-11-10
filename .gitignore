@@ -1,0 +1,10 @@
+# Ferramentas locais de pré-visualização
+.claude/
+
+# Vídeo recebido sem imagem (tela preta do início ao fim); não usado no site
+assets/videos/video-1.mp4
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="pt-BR" data-type="service">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Darian Boccacio · Cirurgia do Joelho em Jaraguá do Sul</title>
+<meta name="description" content="Ortopedista com atuação em cirurgia do joelho e medicina do esporte. Lesões de ligamento, menisco e cartilagem. Atendimento em Jaraguá do Sul e São Bento do Sul.">
+<meta name="page-type" content="service">
+<meta name="site-kind" content="other">
+<meta name="theme-color" content="#06111C">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Dr. Darian Boccacio · Cirurgia do Joelho e Medicina do Esporte">
+<meta property="og:description" content="Lesões de ligamento, menisco e cartilagem, da primeira consulta ao retorno ao esporte. Jaraguá do Sul e São Bento do Sul.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2306111C'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23C9A45C' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' fill='%23E7D09A' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind (Play CDN) -->
+<script src="https://cdn.tailwindcss.com/3.4.5"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 950: '#06111C', 900: '#0A1A2A', 800: '#10263C', 700: '#183552', 600: '#23476B' },
+          cream: '#F7F4EE',
+          sand: '#EEE7DB',
+          ink: '#0D1620',
+          muted: '#5D6A77',
+          steel: '#9DBAD3',
+          gold: { DEFAULT: '#C9A45C', light: '#E7D09A', dark: '#A6823A' },
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans: ['Jost', 'system-ui', 'sans-serif'],
+        },
+        letterSpacing: { eyebrow: '0.32em' },
+      },
+    },
+  };
+</script>
+
+<!-- Motion: GSAP + ScrollTrigger + Lenis (smooth scroll) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+<!-- React 18 + Babel (JSX no navegador, sem etapa de build) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  body { background: #F7F4EE; color: #0D1620; font-family: Jost, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background: #C9A45C; color: #06111C; }
+
+  /* Linhas que sobem de dentro de uma máscara */
+  .line { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+  .line > span { display: block; will-change: transform; }
+
+  /* Botão dourado com brilho */
+  .btn-gold { background: linear-gradient(135deg, #A6823A 0%, #C9A45C 38%, #E7D09A 62%, #C9A45C 100%); background-size: 200% 100%; color: #06111C; position: relative; overflow: hidden; isolation: isolate; transition: background-position .6s ease, box-shadow .4s ease, transform .3s ease; box-shadow: 0 10px 30px -10px rgba(201,164,92,.55); }
+  .btn-gold:hover { background-position: 100% 0; box-shadow: 0 16px 40px -12px rgba(201,164,92,.75); }
+  .btn-gold::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 34%, rgba(255,255,255,.45) 50%, transparent 66%); background-size: 220% 100%; animation: shimmer 3.2s ease-in-out infinite; }
+  @keyframes shimmer { 0% { background-position: 120% 0; } 60%, 100% { background-position: -120% 0; } }
+
+  .pulse-ring { animation: pulseRing 2.4s cubic-bezier(.2,.6,.4,1) infinite; }
+  @keyframes pulseRing { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.7); opacity: 0; } }
+
+  .spin-slow { animation: spin 60s linear infinite; }
+  .spin-slower { animation: spin 90s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .marquee-track { animation: marquee var(--dur, 40s) linear infinite; }
+  .marquee-track.reverse { animation-direction: reverse; }
+  .marquee:hover .marquee-track, .marquee.paused .marquee-track { animation-play-state: paused; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  .ring-breathe { animation: breathe 6s ease-in-out infinite; }
+  @keyframes breathe { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity: .5; } 50% { transform: translate(-50%,-50%) scale(1.06); opacity: 1; } }
+
+  .scroll-dot { animation: scrollDot 2.2s cubic-bezier(.65,0,.35,1) infinite; }
+  @keyframes scrollDot { 0% { transform: translateY(-100%); } 100% { transform: translateY(260%); } }
+
+  .fade-swap { animation: fadeSwap .7s cubic-bezier(.2,.7,.2,1); }
+  @keyframes fadeSwap { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
+  .outline-text { color: transparent; -webkit-text-stroke: 1px rgba(166,130,58,.7); }
+  .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06; mix-blend-mode: overlay; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  :focus-visible { outline: 2px solid #C9A45C; outline-offset: 3px; border-radius: 8px; }
+  .skip { position: fixed; left: 16px; top: -80px; z-index: 100; }
+  .skip:focus { top: 16px; }
+
+  /* Logo (monograma DB): a cor vem do fundo do elemento, a forma vem da imagem */
+  .logo-mark { -webkit-mask: url(assets/logo-mark.png) center / contain no-repeat; mask: url(assets/logo-mark.png) center / contain no-repeat; }
+
+  /* Hero: retrato que se dissolve no fundo marinho */
+  .hero-photo { -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 98%); mask-image: linear-gradient(to bottom, #000 50%, transparent 98%); }
+  .hero-photo img { filter: brightness(1.08) contrast(1.05) saturate(1); }
+  .hero-ring { width: 380px; height: 380px; left: calc(50% - 190px); top: calc(19svh - 190px); }
+  @media (min-width: 1024px) {
+    .hero-photo {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 34%), linear-gradient(to top, transparent 0%, #000 26%);
+      -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 34%), linear-gradient(to top, transparent 0%, #000 26%); mask-composite: intersect;
+    }
+    .hero-ring { width: 600px; height: 600px; left: calc(36% + 64% * .44 - 300px); top: calc(32% - 300px); }
+    .hero-ring-2 { width: 760px; height: 760px; left: calc(36% + 64% * .44 - 380px); top: calc(32% - 380px); }
+  }
+
+  /* Antes do React montar: tela de abertura em CSS puro */
+  #boot { position: fixed; inset: 0; background: #06111C; z-index: 90; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track, .spin-slow, .spin-slower, .ring-breathe, .scroll-dot, .pulse-ring, .btn-gold::after { animation: none !important; }
+    .marquee { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<!--
+  Dr. Darian Boccacio · landing page
+  Stack: React 18 + Tailwind (CDN) + GSAP/ScrollTrigger + Lenis. Sem build: abre direto no navegador.
+  Referência de estrutura e motion: gabilazzbeauty.com (hero escuro com foto, dourado, carrossel, depoimentos, FAQ, CTA final).
+  Paleta: azul-marinho profundo (confiança, ambiente clínico) + dourado champanhe (alto padrão) + creme.
+  Fotos: Unsplash como substitutas. Trocar pelas fotos reais do Dr. Darian, da equipe e do consultório.
+-->
+<div id="boot" aria-hidden="true"></div>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef, useLayoutEffect, Fragment } = React;
+
+/* ------------------------------------------------------------------ dados */
+const WA = 'https://wa.me/message/EHLZ6THIL2THH1';
+const IG = 'https://www.instagram.com/dr.darianboccacio/';
+const DOCTORALIA = 'https://www.doctoralia.com.br/darian-boccacio/ortopedista-traumatologista/jaragua-do-sul';
+const img = (id, w = 1600) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+// Fotos reais do Dr. Darian (assets/photos). Só os cards de tratamento usam fotos ilustrativas do Unsplash.
+const P = (name) => `assets/photos/${name}.jpg`;
+const PHOTOS = {
+  hero: P('portrait-grey'),
+  about: P('portrait-blue'),
+  scrubs: P('scrubs-tablet'),
+  consult: P('consult-tablet'),
+  exam: P('knee-exam'),
+  handshake: P('handshake'),
+  chandelier: P('suit-chandelier'),
+  trophy: P('trophy-lnf'),
+  team: P('futsal-team'),
+  athletes: [
+    { src: P('athletes-1'), alt: 'Dr. Darian entre dois atletas do Jaraguá Futsal no consultório' },
+    { src: P('athlete-2'), alt: 'Dr. Darian ao lado de um atleta do Jaraguá Futsal' },
+    { src: P('athletes-3'), alt: 'Dr. Darian com dois atletas do Jaraguá Futsal no consultório' },
+    { src: P('athlete-4'), alt: 'Dr. Darian e um atleta do Jaraguá Futsal fazendo sinal de positivo ao lado da balança de bioimpedância' },
+  ],
+};
+const VIDEO = { src: 'assets/videos/video-2.mp4', poster: 'assets/videos/video-2-poster.jpg' };
+
+const NAV = [
+  ['Sobre', '#sobre'], ['Tratamentos', '#tratamentos'], ['Cirurgia', '#cirurgia'],
+  ['Esporte', '#esporte'], ['Depoimentos', '#depoimentos'], ['Dúvidas', '#duvidas'],
+];
+
+const TREATMENTS = [
+  { tags: ['Mais comum no esporte', 'Artroscopia'], kicker: 'Ligamento', title: 'Ligamento cruzado anterior (LCA)', text: 'Lesão típica de giro e mudança de direção, como no futsal e no futebol. Para quem quer voltar a jogar, a reconstrução por artroscopia costuma ser o caminho.', photo: 'photo-1543326727-cf6c39e8f84c' },
+  { tags: ['Artroscopia'], kicker: 'Menisco', title: 'Lesão de menisco', text: 'Dor na linha do joelho, travamento e inchaço depois do esforço. Sempre que a lesão permite, o menisco é suturado e preservado, não retirado.', local: PHOTOS.exam, pos: '50% 35%', alt: 'Dr. Darian examinando a perna de um paciente na maca' },
+  { tags: ['Desgaste'], kicker: 'Cartilagem', title: 'Artrose do joelho', text: 'Dor ao caminhar e ao subir escada. O tratamento começa por fortalecimento e controle de carga; a cirurgia entra quando isso deixa de bastar.', photo: 'photo-1687013367433-9077a7624830' },
+  { tags: ['Frente do joelho'], kicker: 'Patela', title: 'Condromalácia patelar', text: 'Dor ao agachar ou depois de muito tempo sentado. Ajustes de treino e de biomecânica resolvem boa parte dos casos.', photo: 'photo-1476480862126-209bfaa8edc8' },
+  { tags: ['Sobrecarga'], kicker: 'Tendões', title: 'Tendinites e bursites', text: 'Comuns em corredores e em quem voltou a treinar depois de uma pausa. Quase sempre tratadas sem cirurgia.', photo: 'photo-1530143311094-34d807799e8f' },
+  { tags: ['Trauma'], kicker: 'Esporte', title: 'Entorses e lesões em jogo', text: 'Torção, pancada ou queda. Avaliação rápida para definir imobilização, reabilitação ou cirurgia, com prazo de retorno.', photo: 'photo-1706777193603-76c3e9613553' },
+];
+
+const STEPS = [
+  { n: '01', title: 'Consulta sem pressa', text: 'Conversa sobre a rotina, o esporte e a dor. Exame físico do joelho e análise de como você agacha, corre e salta.' },
+  { n: '02', title: 'Diagnóstico claro', text: 'Raio-x ou ressonância quando o resultado muda a decisão. Você sai da consulta entendendo o que tem.' },
+  { n: '03', title: 'Plano de tratamento', text: 'Fortalecimento, infiltração ou cirurgia por artroscopia, com alternativas e prazos explicados antes de decidir.' },
+  { n: '04', title: 'Reabilitação e retorno', text: 'Retornos programados no pós-operatório e liberação por etapas até voltar a treinar e competir.' },
+];
+
+// Avaliações reais publicadas no Doctoralia (nome abreviado).
+const REVIEWS = [
+  { name: 'Márcio M.', text: 'Dr. Darian é sempre atencioso e explica detalhadamente o diagnóstico e o tratamento. Médico comprometido com a profissão.' },
+  { name: 'Vanessa S.', text: 'Atendimento de excelência, sem pressa para acabar a consulta e foi tudo muito bem detalhado!!' },
+  { name: 'M. L. N.', text: 'Excelente médico, passa confiança e segurança no que está falando!' },
+  { name: 'Ana Paula H.', text: 'Muito atencioso, explicou bem a situação e mostrou opções de soluções.' },
+  { name: 'Helena S.', text: 'Ótimo atendimento. Pontual, e atencioso com os detalhes sobre as informações.' },
+  { name: 'Gilson M.', text: 'Muito bom profissional, eficiente com muito conhecimento.' },
+  { name: 'Josinaldo M.', text: 'Médico muito competente, sempre apresentando a melhor alternativa de tratamento... nota 10.' },
+  { name: 'Patricia G.', text: 'Analisa e examina com uma competência absoluta, tenho plena confiança nele.' },
+];
+
+const PLACES = {
+  jgs: {
+    city: 'Jaraguá do Sul',
+    items: [
+      { label: 'COE · Centro de Ortopedia Especializada', addr: 'Rua José Emmendoerfer, Nova Brasília' },
+      { label: 'Consultório', addr: 'Av. Marechal Deodoro da Fonseca, Centro' },
+    ],
+    map: 'https://goo.gl/maps/smzZ5Xy8k7kotDQYA',
+    embed: 'Rua José Emmendoerfer, Nova Brasília, Jaraguá do Sul - SC',
+  },
+  sbs: {
+    city: 'São Bento do Sul',
+    items: [{ label: 'Consultório em São Bento do Sul', addr: 'Atendimento com agendamento prévio' }],
+    map: 'https://goo.gl/maps/9nChaNMRn8z9gGKF7',
+    embed: 'São Bento do Sul - SC',
+  },
+};
+
+const FAQ = [
+  { q: 'Como agendar a consulta?', a: 'Pelo WhatsApp da equipe. Você escolhe a cidade, Jaraguá do Sul ou São Bento do Sul, e o melhor horário disponível.' },
+  { q: 'O atendimento é particular ou por convênio?', a: 'As condições de atendimento, particular e convênios aceitos, são informadas pela equipe no momento do agendamento.' },
+  { q: 'Toda lesão de LCA precisa de cirurgia?', a: 'Não. A decisão depende da estabilidade do joelho, da idade, do nível de atividade e de lesões associadas. Para quem pratica esporte com giro e mudança de direção, a reconstrução costuma ser indicada.' },
+  { q: 'Quanto tempo leva a recuperação de uma artroscopia?', a: 'Depende do procedimento. Uma cirurgia de menisco costuma liberar atividades leves em poucas semanas; a reconstrução do LCA exige alguns meses de reabilitação até o retorno ao esporte. O prazo do seu caso é explicado na consulta.' },
+  { q: 'Atende atletas amadores?', a: 'Sim. O mesmo raciocínio usado com atletas profissionais vale para quem corre, joga futebol com os amigos ou treina na academia.' },
+  { q: 'Preciso levar exames na primeira consulta?', a: 'Se você já tiver exames, leve. Se não tiver, o exame físico vem primeiro e só são pedidos os exames que mudam a decisão.' },
+];
+
+/* ------------------------------------------------------------------ ícones */
+const I = ({ d, className = 'h-5 w-5', fill = 'none', sw = 1.6, children, vb = '0 0 24 24' }) => (
+  <svg viewBox={vb} className={className} fill={fill} stroke={fill === 'none' ? 'currentColor' : 'none'} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {d ? <path d={d} /> : children}
+  </svg>
+);
+const WhatsAppIcon = ({ className = 'h-5 w-5' }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+);
+const InstagramIcon = ({ className = 'h-5 w-5' }) => (
+  <I className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><path d="M17.5 6.5h.01" /></I>
+);
+const ArrowRight = (p) => <I {...p}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></I>;
+const ArrowLeft = (p) => <I {...p}><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></I>;
+const Pin = (p) => <I {...p}><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></I>;
+const Plus = (p) => <I {...p}><path d="M5 12h14" /><path d="M12 5v14" /></I>;
+const Nav = (p) => <I {...p}><polygon points="3 11 22 2 13 21 11 13 3 11" /></I>;
+const Star = ({ className = 'h-3.5 w-3.5' }) => <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
+const Stars = ({ className = 'text-gold' }) => <span className={`flex gap-0.5 ${className}`}>{[0,1,2,3,4].map(i => <Star key={i} />)}</span>;
+const Activity = (p) => <I {...p}><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></I>;
+const Trophy = (p) => <I {...p}><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></I>;
+const Shield = (p) => <I {...p}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></I>;
+const Calendar = (p) => <I {...p}><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M16 2v4" /><path d="M8 2v4" /><path d="M3 10h18" /><path d="m9 16 2 2 4-4" /></I>;
+const Play = (p) => <I {...p}><polygon points="6 3 20 12 6 21 6 3" fill="currentColor" /></I>;
+const Pause = (p) => <I {...p}><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" /><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" /></I>;
+const SoundOn = (p) => <I {...p}><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /><path d="M16 9a5 5 0 0 1 0 6" /><path d="M19.364 18.364a9 9 0 0 0 0-12.728" /></I>;
+const SoundOff = (p) => <I {...p}><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /><line x1="22" x2="16" y1="9" y2="15" /><line x1="16" x2="22" y1="9" y2="15" /></I>;
+const FileText = (p) => <I {...p}><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" /></I>;
+
+/* ------------------------------------------------------------------ peças */
+const C = 'mx-auto w-full max-w-[1240px] px-5 sm:px-8';
+
+const Eyebrow = ({ children, light, className = '' }) => (
+  <p data-fade className={`font-sans text-[11px] font-medium uppercase tracking-eyebrow ${light ? 'text-gold-light' : 'text-gold-dark'} ${className}`}>{children}</p>
+);
+
+// Título em linhas: cada linha sobe de dentro de uma máscara quando entra na tela.
+const Lines = ({ as: Tag = 'h2', lines, className = '', hero }) => (
+  <Tag className={className} {...(hero ? { 'data-hero-lines': '' } : { 'data-lines': '' })}>
+    {lines.map((l, i) => <span className="line" key={i}><span>{l}</span></span>)}
+  </Tag>
+);
+const Em = ({ children, light }) => <em className={`font-serif italic ${light ? 'text-gold-light' : 'text-gold-dark'}`}>{children}</em>;
+
+const GoldLine = ({ className = '' }) => <span data-draw className={`block h-px w-24 origin-left bg-gradient-to-r from-gold to-transparent ${className}`} />;
+
+function useMagnetic() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || matchMedia('(pointer: coarse)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const move = (e) => {
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height / 2);
+      gsap.to(el, { x: x * 0.22, y: y * 0.3, duration: 0.5, ease: 'power3.out' });
+    };
+    const leave = () => gsap.to(el, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, .4)' });
+    el.addEventListener('mousemove', move); el.addEventListener('mouseleave', leave);
+    return () => { el.removeEventListener('mousemove', move); el.removeEventListener('mouseleave', leave); };
+  }, []);
+  return ref;
+}
+
+const GoldButton = ({ href, children, className = '', icon = true }) => {
+  const ref = useMagnetic();
+  return (
+    <a ref={ref} href={href} target="_blank" rel="noopener" className={`btn-gold inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full px-8 text-[15px] font-medium tracking-wide active:scale-[.97] ${className}`}>
+      {icon && <WhatsAppIcon className="h-[18px] w-[18px]" />}{children}
+    </a>
+  );
+};
+const GhostButton = ({ href, children, light = true, className = '', external }) => (
+  <a href={href} {...(external ? { target: '_blank', rel: 'noopener' } : {})}
+     className={`group inline-flex min-h-[54px] items-center justify-center gap-3 whitespace-nowrap rounded-full border px-8 text-[15px] font-medium tracking-wide transition duration-300 active:scale-[.97] ${light ? 'border-cream/30 text-cream hover:border-gold-light hover:bg-cream hover:text-navy-950' : 'border-ink/20 text-ink hover:border-navy-900 hover:bg-navy-900 hover:text-cream'} ${className}`}>
+    {children}<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </a>
+);
+
+const Logo = ({ light = true }) => (
+  <a href="#inicio" className="group flex items-center gap-3" aria-label="Dr. Darian Boccacio, início">
+    <span aria-hidden="true" className={`logo-mark block h-10 w-12 transition duration-700 group-hover:-rotate-6 group-hover:scale-110 ${light ? 'bg-gold-light' : 'bg-navy-900'}`} />
+    <span className="leading-none">
+      <span className={`block whitespace-nowrap font-serif text-[21px] ${light ? 'text-cream' : 'text-ink'}`}>Dr. Darian Boccacio</span>
+      <span className={`mt-1 block whitespace-nowrap text-[9.5px] uppercase tracking-[0.3em] ${light ? 'text-cream/60' : 'text-muted'}`}>Ortopedia · Joelho</span>
+    </span>
+  </a>
+);
+
+/* ------------------------------------------------------------------ abertura */
+function Preloader({ onReveal, onDone }) {
+  const root = useRef(null);
+  useLayoutEffect(() => {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('boot')?.remove();
+    const tl = gsap.timeline({ onComplete: onDone });
+    tl.from('[data-pl-mark]', { clipPath: reduce ? 'inset(0 0% 0 0)' : 'inset(0 100% 0 0)', opacity: reduce ? 0 : 1, duration: reduce ? .2 : 1.1, ease: 'power2.inOut' })
+      .from('[data-pl-name]', { y: 14, opacity: 0, duration: reduce ? .2 : .7, ease: 'expo.out' }, '-=.35')
+      .to('[data-pl-bar]', { scaleX: 1, duration: reduce ? .2 : .8, ease: 'power2.inOut' }, '-=.4')
+      .add(() => onReveal(), '+=.05')
+      .to(root.current, { yPercent: -100, duration: reduce ? .3 : 1.05, ease: 'expo.inOut' }, '+=.05');
+    return () => tl.kill();
+  }, []);
+  return (
+    <div ref={root} className="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-navy-950 text-cream" aria-hidden="true">
+      <span data-pl-mark className="logo-mark block h-24 w-28 bg-gold-light sm:h-28 sm:w-32" />
+      <div data-pl-name className="mt-6 text-center">
+        <p className="font-serif text-[26px] tracking-[0.08em]">DR. DARIAN BOCCACIO</p>
+        <p className="mt-1 text-[10px] uppercase tracking-[0.32em] text-cream/55">Cirurgia do joelho · Medicina esportiva</p>
+      </div>
+      <span className="mt-6 block h-px w-40 overflow-hidden bg-cream/10"><span data-pl-bar className="block h-full w-full origin-left scale-x-0 bg-gradient-to-r from-gold-dark via-gold-light to-gold" /></span>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ cabeçalho */
+function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    let last = 0;
+    const on = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      if (y > 700 && y > last + 4) setHidden(true);
+      if (y < last - 4 || y < 700) setHidden(false);
+      last = y;
+    };
+    on(); window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    window.__lenis && (open ? window.__lenis.stop() : window.__lenis.start());
+    if (open && menuRef.current) {
+      gsap.fromTo(menuRef.current.querySelectorAll('[data-mi]'), { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .8, ease: 'expo.out', stagger: .05, delay: .15 });
+    }
+    const esc = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [open]);
+
+  const light = !scrolled || open;
+  return (
+    <>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : ''} ${scrolled && !open ? 'bg-cream/85 shadow-[0_10px_40px_-20px_rgba(6,17,28,.25)] backdrop-blur-xl' : ''}`}>
+        <div className={`${C} flex items-center justify-between gap-6 transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}>
+          <Logo light={light} />
+          <nav aria-label="Principal" className="hidden xl:block">
+            <ul className="flex items-center gap-8">
+              {NAV.map(([label, href]) => (
+                <li key={href}><a href={href} className={`group relative py-2 text-[12px] font-medium uppercase tracking-[0.2em] transition-colors ${light ? 'text-cream/85 hover:text-cream' : 'text-ink/80 hover:text-ink'}`}>
+                  {label}<span className="absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-gold transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
+                </a></li>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex items-center gap-3">
+            <a href={IG} target="_blank" rel="noopener" aria-label="Instagram do Dr. Darian" className={`hidden h-11 w-11 place-items-center rounded-full border transition sm:grid ${light ? 'border-cream/25 text-cream hover:bg-cream hover:text-navy-950' : 'border-ink/15 text-ink hover:bg-navy-900 hover:text-cream'}`}><InstagramIcon className="h-[18px] w-[18px]" /></a>
+            <a href={WA} target="_blank" rel="noopener" className={`hidden min-h-[44px] items-center gap-2 rounded-full px-5 text-[14px] font-medium transition duration-300 hover:-translate-y-0.5 sm:inline-flex ${light ? 'bg-cream text-navy-950 hover:bg-gold-light' : 'bg-navy-900 text-cream hover:bg-navy-700'}`}><WhatsAppIcon className="h-4 w-4" />Agendar</a>
+            <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="menu" aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+              className={`relative grid h-11 w-11 place-items-center rounded-full border xl:hidden ${light ? 'border-cream/25' : 'border-ink/15'}`}>
+              <span className={`absolute h-px w-5 transition duration-500 ${light ? 'bg-cream' : 'bg-ink'} ${open ? 'rotate-45' : '-translate-y-[4px]'}`} />
+              <span className={`absolute h-px w-5 transition duration-500 ${light ? 'bg-cream' : 'bg-ink'} ${open ? '-rotate-45' : 'translate-y-[4px]'}`} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div id="menu" ref={menuRef} className={`fixed inset-0 z-40 flex flex-col bg-navy-950 px-5 pb-8 pt-28 text-cream transition-[clip-path] duration-700 ease-[cubic-bezier(.7,0,.2,1)] sm:px-8 xl:hidden ${open ? '[clip-path:inset(0_0_0_0)]' : 'pointer-events-none [clip-path:inset(0_0_100%_0)]'}`} aria-hidden={!open}>
+        <ul className="space-y-1">
+          {NAV.map(([label, href], i) => (
+            <li key={href} className="overflow-hidden"><a data-mi href={href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1} className="flex items-baseline gap-4 py-2 font-serif text-[42px] leading-tight">
+              <span className="font-sans text-xs text-gold">0{i + 1}</span>{label}</a></li>
+          ))}
+        </ul>
+        <div className="mt-auto space-y-3">
+          <GoldButton href={WA} className="w-full">Agendar pelo WhatsApp</GoldButton>
+          <p className="text-center text-xs uppercase tracking-[0.25em] text-cream/50">Jaraguá do Sul · São Bento do Sul</p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ 1. hero */
+function Hero() {
+  return (
+    <section id="inicio" className="grain relative isolate flex min-h-[100svh] items-end overflow-hidden bg-navy-950 text-cream">
+      {/* fundo: marinho com brilho azul atrás do retrato */}
+      <div aria-hidden="true" className="absolute inset-0 -z-30 bg-[radial-gradient(ellipse_at_70%_30%,#1B3A57_0%,#0A1A2A_40%,#06111C_78%)]" />
+
+      {/* retrato do Dr. Darian, fundido ao fundo pelas bordas */}
+      <div data-hero-img className="hero-photo absolute inset-x-0 top-0 -z-20 h-[50svh] sm:h-[64svh] lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[64%]">
+        <img data-hero-parallax src={PHOTOS.hero} alt="Dr. Darian Boccacio de terno cinza, com a mão apoiada no queixo" className="h-[112%] w-full object-cover object-[50%_4%] lg:object-[50%_12%]" fetchpriority="high" />
+        <div className="absolute inset-0 bg-navy-800/20 mix-blend-multiply lg:bg-navy-800/25" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_38%,transparent_30%,rgba(6,17,28,.35)_62%,rgba(6,17,28,.85)_100%)] lg:bg-[radial-gradient(ellipse_at_50%_34%,transparent_24%,rgba(6,17,28,.3)_56%,rgba(6,17,28,.82)_95%)]" />
+      </div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+      <div className="absolute inset-y-0 left-0 -z-10 hidden w-[62%] bg-gradient-to-r from-navy-950 via-navy-950/75 to-transparent lg:block" />
+
+      {/* anel dourado em volta do retrato */}
+      <div aria-hidden="true" className="hero-ring absolute -z-10">
+        <div className="spin-slow relative h-full w-full rounded-full border border-gold/35">
+          <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-light shadow-[0_0_18px_4px_rgba(231,208,154,.6)]" />
+        </div>
+      </div>
+      <div aria-hidden="true" className="hero-ring hero-ring-2 absolute -z-10 hidden lg:block">
+        <div className="spin-slower h-full w-full rounded-full border border-dashed border-cream/10" />
+      </div>
+
+      <div className={`${C} relative z-[2] pb-14 pt-32 sm:pb-24`}>
+        <div className="max-w-[680px]">
+          <div data-hero-fade className="mb-7 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-cream/15 bg-cream/[.06] px-4 py-2 text-[12.5px] text-cream/85 backdrop-blur-md">
+            <Stars /><span><b className="font-medium text-cream">5,0</b> no Doctoralia</span>
+            <span className="h-3 w-px bg-cream/25" />
+            <span>+5 mil cirurgias</span>
+            <span className="h-3 w-px bg-cream/25" />
+            <span className="inline-flex items-center gap-1"><Pin className="h-3.5 w-3.5" />Jaraguá do Sul · SC</span>
+          </div>
+          <p data-hero-fade className="mb-5 hidden text-[11px] font-medium uppercase tracking-eyebrow text-gold-light sm:block">Ortopedia · Cirurgia do joelho · Medicina do esporte</p>
+          <Lines as="h1" hero className="font-serif text-[42px] font-medium leading-[0.98] tracking-[-0.02em] [text-shadow:0_2px_30px_rgba(6,17,28,.5)] sm:text-[72px] lg:text-[86px]"
+            lines={['Cirurgia do joelho', 'para você voltar', <Em light>a se mover.</Em>]} />
+          <p data-hero-fade className="mt-6 max-w-[520px] text-pretty text-[16px] font-light leading-relaxed text-cream/80 sm:mt-7 sm:text-lg">
+            Dr. Darian Boccacio trata lesões de ligamento, menisco e cartilagem com foco no retorno ao esporte e à rotina, em Jaraguá do Sul e São Bento do Sul.
+          </p>
+          <div data-hero-fade className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <GoldButton href={WA}>Agendar consulta</GoldButton>
+            <GhostButton href="#tratamentos">Ver tratamentos</GhostButton>
+          </div>
+        </div>
+      </div>
+
+      <a href="#sobre" data-hero-fade className="absolute bottom-10 right-8 z-[2] hidden flex-col items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-cream/60 transition hover:text-gold-light md:flex">
+        <span className="[writing-mode:vertical-rl]">Explorar</span>
+        <span className="relative h-14 w-px overflow-hidden bg-cream/20"><span className="scroll-dot absolute inset-x-0 top-0 h-5 bg-gold-light" /></span>
+      </a>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 2. sobre */
+function About() {
+  const stats = [
+    { value: 5000, prefix: '+', label: 'cirurgias realizadas' },
+    { value: 181, label: 'avaliações no Doctoralia' },
+    { value: 5, decimals: 1, label: 'nota média dos pacientes' },
+    { value: 2, label: 'cidades de atendimento' },
+  ];
+  const pillars = [
+    { Icon: Activity, title: 'Joelho', text: 'Ligamentos, menisco e cartilagem, do diagnóstico à cirurgia por artroscopia.' },
+    { Icon: Trophy, title: 'Esporte', text: 'Plano de retorno com etapas e prazos, como na rotina do futsal profissional.' },
+    { Icon: Shield, title: 'Movimento', text: 'Avaliação biomecânica: como você agacha, corre e salta explica a dor.' },
+  ];
+  return (
+    <section id="sobre" className="relative overflow-hidden bg-cream py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-20 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(201,164,92,.16),transparent_65%)]" />
+      <div className={`${C} grid items-center gap-14 lg:grid-cols-12 lg:gap-10`}>
+        <div className="relative lg:col-span-5">
+          <div data-img-reveal className="relative aspect-[4/5] overflow-hidden rounded-b-[36px] rounded-t-[999px] bg-sand shadow-[0_40px_80px_-40px_rgba(6,17,28,.55)]">
+            <img src={PHOTOS.about} alt="Dr. Darian Boccacio de terno azul, braços cruzados, sorrindo" className="h-[115%] w-full object-cover object-[50%_20%]" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/35 via-transparent to-transparent" />
+          </div>
+          <div data-fade data-delay=".3" className="absolute -bottom-6 left-6 right-6 flex items-center justify-between gap-4 rounded-2xl border border-white/60 bg-white/85 px-5 py-4 shadow-xl backdrop-blur-xl sm:left-auto sm:right-[-24px] sm:w-[300px]">
+            <div><p className="text-[10px] uppercase tracking-[0.25em] text-muted">Registro</p><p className="mt-1 font-serif text-xl text-ink">CRM SC 13197</p><p className="text-[13px] text-muted">RQE 10194 · Ortopedia</p></div>
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-navy-900 text-gold-light"><Shield className="h-5 w-5" /></span>
+          </div>
+        </div>
+
+        <div className="lg:col-span-6 lg:col-start-7">
+          <Eyebrow>Quem é</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[60px]" lines={['Dr. Darian', <Em>Boccacio.</Em>]} />
+          <p data-fade className="mt-6 text-[17px] font-light leading-[1.75] text-ink/75">
+            Ortopedista e traumatologista com atuação dedicada ao joelho e à medicina do esporte. Chefe do departamento médico do Jaraguá Futsal, une a rotina com atletas profissionais à atenção de quem só quer caminhar, subir escada e treinar sem dor.
+          </p>
+          <div data-fade className="mt-8 border-l-2 border-gold pl-6">
+            <p className="font-serif text-[26px] italic leading-snug text-navy-800 sm:text-[30px]">Cirurgia do joelho e biomecânica do exercício.</p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.25em] text-muted">Áreas de referência</p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {pillars.map(({ Icon, title, text }, i) => (
+              <div key={title} data-fade data-delay={i * .1} className="group rounded-3xl border border-ink/[.07] bg-white/70 p-6 transition duration-500 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-[0_24px_50px_-30px_rgba(6,17,28,.35)]">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-gold/15 text-gold-dark transition duration-500 group-hover:bg-navy-900 group-hover:text-gold-light"><Icon className="h-5 w-5" /></span>
+                <h3 className="mt-5 font-serif text-[22px] font-semibold text-ink">{title}</h3>
+                <p className="mt-1.5 text-[14px] font-light leading-relaxed text-ink/65">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${C} mt-24`}>
+        <div className="grid grid-cols-2 gap-y-10 border-y border-ink/10 py-10 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <div key={s.label} data-fade data-delay={i * .08} className={`px-2 text-center ${i % 2 ? 'border-l border-ink/10' : ''} ${i === 2 ? 'lg:border-l lg:border-ink/10' : ''}`}>
+              <p className="font-serif text-[52px] font-medium leading-none text-navy-900 sm:text-[64px]">
+                {s.prefix}<span data-count={s.value} data-decimals={s.decimals || 0}>{s.decimals ? '5,0' : s.value.toLocaleString('pt-BR')}</span>
+              </p>
+              <p className="mt-3 text-[12px] uppercase tracking-[0.22em] text-muted">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 3. tratamentos (carrossel) */
+function Treatments() {
+  const track = useRef(null);
+  const [idx, setIdx] = useState(0);
+  const drag = useRef({ down: false, x: 0, left: 0, moved: false });
+
+  const stepW = () => { const card = track.current.querySelector('[data-card]'); return card ? card.offsetWidth + 24 : 400; };
+  useEffect(() => {
+    const el = track.current;
+    const on = () => setIdx(Math.min(TREATMENTS.length - 1, Math.round(el.scrollLeft / stepW())));
+    el.addEventListener('scroll', on, { passive: true });
+    return () => el.removeEventListener('scroll', on);
+  }, []);
+
+  const toIdx = (i) => track.current.scrollTo({ left: Math.max(0, Math.min(TREATMENTS.length - 1, i)) * stepW(), behavior: 'smooth' });
+  const pd = (e) => { if (e.pointerType !== 'mouse') return; drag.current = { down: true, x: e.clientX, left: track.current.scrollLeft, moved: false }; track.current.style.scrollSnapType = 'none'; track.current.style.scrollBehavior = 'auto'; };
+  const pm = (e) => { const d = drag.current; if (!d.down) return; const dx = e.clientX - d.x; if (Math.abs(dx) > 4) d.moved = true; track.current.scrollLeft = d.left - dx; };
+  const pu = () => { if (!drag.current.down) return; drag.current.down = false; track.current.style.scrollSnapType = ''; track.current.style.scrollBehavior = ''; toIdx(Math.round(track.current.scrollLeft / stepW())); };
+  const pad = 'max(20px, calc((100vw - 1240px) / 2 + 32px))';
+
+  return (
+    <section id="tratamentos" className="grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 py-24 text-cream sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute right-[-10%] top-[-20%] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(35,71,107,.55),transparent_65%)]" />
+      <div className={`${C} relative z-[2]`}>
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-[640px]">
+            <Eyebrow light>Tratamentos</Eyebrow>
+            <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] sm:text-[60px]" lines={['O que tratamos', <>no <Em light>joelho.</Em></>]} />
+            <p data-fade className="mt-6 text-[17px] font-light leading-relaxed text-cream/70">Deslize para conhecer as lesões mais comuns no consultório. Cada caso começa pela conversa e pelo exame do movimento.</p>
+            <GoldLine className="mt-8" />
+          </div>
+          <p data-fade className="font-serif text-[30px] text-gold-light">06 condições</p>
+        </div>
+      </div>
+
+      <div ref={track} onPointerDown={pd} onPointerMove={pm} onPointerUp={pu} onPointerLeave={pu}
+        className="no-scrollbar relative z-[2] mt-14 flex cursor-grab snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 active:cursor-grabbing"
+        style={{ paddingInline: pad, scrollPaddingInline: pad }}
+        aria-label="Lista de tratamentos">
+        {TREATMENTS.map((t, i) => (
+          <article key={t.title} data-card data-fade data-delay={Math.min(i, 3) * .08}
+            className={`group relative flex w-[84vw] max-w-[380px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border bg-navy-800/50 backdrop-blur transition duration-500 hover:-translate-y-2 sm:w-[380px] ${i === idx ? 'border-gold/45' : 'border-cream/10'}`}>
+            <div className="relative h-[290px] overflow-hidden">
+              <img src={t.local || img(t.photo, 900)} alt={t.alt || ''} style={t.pos ? { objectPosition: t.pos } : undefined} draggable="false" className="h-full w-full select-none object-cover transition duration-[1.2s] ease-out group-hover:scale-[1.07]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/10 to-transparent" />
+              <div className="absolute left-5 top-5 flex flex-wrap gap-2">
+                {t.tags.map((tag, j) => <span key={tag} className={`rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md ${j === 0 && i === 0 ? 'bg-gold text-navy-950' : 'bg-navy-950/55 text-cream/90'}`}>{tag}</span>)}
+              </div>
+              <span className="absolute bottom-3 right-5 font-serif text-[64px] leading-none text-cream/15">0{i + 1}</span>
+            </div>
+            <div className="flex flex-1 flex-col p-7 pt-2">
+              <p className="text-[10.5px] uppercase tracking-[0.28em] text-gold-light/80">{t.kicker}</p>
+              <h3 className="mt-2 font-serif text-[30px] font-semibold leading-[1.08]">{t.title}</h3>
+              <p className="mt-3 flex-1 text-[14.5px] font-light leading-relaxed text-cream/70">{t.text}</p>
+              <a href={WA} target="_blank" rel="noopener" className="mt-7 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-cream text-[14px] font-medium text-navy-950 transition duration-300 hover:bg-gold-light active:scale-[.97]">
+                <WhatsAppIcon className="h-4 w-4" />Agendar avaliação
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className={`${C} relative z-[2] mt-8 flex items-center justify-between`}>
+        <div className="flex items-center gap-3">
+          <button onClick={() => toIdx(idx - 1)} aria-label="Tratamento anterior" disabled={idx === 0} className="grid h-12 w-12 place-items-center rounded-full border border-cream/25 transition hover:border-gold-light hover:bg-cream hover:text-navy-950 active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-cream"><ArrowLeft className="h-4 w-4" /></button>
+          <button onClick={() => toIdx(idx + 1)} aria-label="Próximo tratamento" disabled={idx === TREATMENTS.length - 1} className="grid h-12 w-12 place-items-center rounded-full border border-cream/25 transition hover:border-gold-light hover:bg-cream hover:text-navy-950 active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-cream"><ArrowRight className="h-4 w-4" /></button>
+          <p className="ml-3 font-serif text-lg text-cream/80" aria-live="polite"><span className="text-gold-light">0{idx + 1}</span> / 0{TREATMENTS.length}</p>
+        </div>
+        <div className="hidden items-center gap-1.5 sm:flex">
+          {TREATMENTS.map((t, i) => <button key={t.title} onClick={() => toIdx(i)} aria-label={`Ir para ${t.title}`} className="grid h-11 place-items-center"><span className={`block h-1.5 rounded-full transition-all duration-500 ${i === idx ? 'w-8 bg-gold-light' : 'w-1.5 bg-cream/30'}`} /></button>)}
+        </div>
+      </div>
+
+      <div className={`${C} relative z-[2] mt-14`}>
+        <div data-fade className="flex flex-col items-start gap-6 rounded-[28px] border border-cream/10 bg-cream/[.04] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="flex items-start gap-5">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-light"><Calendar className="h-5 w-5" /></span>
+            <div><p className="font-serif text-[26px]">Pós-operatório acompanhado</p><p className="mt-1 max-w-[560px] text-[14.5px] font-light text-cream/65">Retornos programados e liberação por etapas até voltar a treinar e competir, junto com a fisioterapia.</p></div>
+          </div>
+          <a href={WA} target="_blank" rel="noopener" className="inline-flex min-h-[48px] shrink-0 items-center gap-2 rounded-full border border-gold/50 px-6 text-[12px] font-medium uppercase tracking-[0.2em] text-gold-light transition hover:bg-gold hover:text-navy-950">Falar com a equipe</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ faixa em movimento */
+function Marquee() {
+  const words = ['Ligamento cruzado', 'Menisco', 'Cartilagem', 'Artroscopia', 'Medicina do esporte', 'Biomecânica'];
+  const row = (
+    <div className="flex shrink-0 items-center">
+      {words.map((w, i) => (
+        <Fragment key={w}>
+          <span className={`px-6 font-serif text-[52px] italic leading-[1.15] sm:text-[88px] ${i % 2 ? 'outline-text' : 'text-navy-900'}`}>{w}</span>
+          <span className="text-2xl text-gold">✦</span>
+        </Fragment>
+      ))}
+    </div>
+  );
+  return (
+    <div className="relative overflow-hidden border-y border-ink/10 bg-sand py-6 sm:py-8" aria-hidden="true">
+      <div data-skew className="marquee flex">
+        <div className="marquee-track flex w-max" style={{ '--dur': '48s' }}>{row}{row}</div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ 4. cirurgia + etapas */
+function Surgery() {
+  return (
+    <section id="cirurgia" className="relative bg-sand py-24 sm:py-32">
+      <div className={C}>
+        <div className="max-w-[720px]">
+          <Eyebrow>Como funciona</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[60px]" lines={['Da primeira consulta', <>ao <Em>retorno ao esporte.</Em></>]} />
+        </div>
+
+        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <div data-img-reveal className="relative h-[460px] overflow-hidden rounded-[32px] sm:h-[600px] lg:h-[calc(100svh-140px)] lg:max-h-[680px]">
+              <img src={PHOTOS.scrubs} alt="Dr. Darian de roupa cirúrgica e touca com o monograma DB, consultando um tablet no corredor" className="h-[118%] w-full object-cover object-[50%_20%]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-7 text-cream sm:p-9">
+                <p className="text-[10.5px] uppercase tracking-[0.3em] text-gold-light">Artroscopia</p>
+                <p className="mt-3 font-serif text-[34px] leading-[1.05] sm:text-[40px]">Cirurgia por cortes de poucos milímetros.</p>
+                <p className="mt-3 max-w-[440px] text-[14.5px] font-light leading-relaxed text-cream/75">Uma microcâmera e instrumentos finos entram no joelho por pequenas incisões. Na maior parte dos casos, menos dor e recuperação mais rápida.</p>
+              </div>
+            </div>
+          </div>
+
+          <div data-steps className="relative">
+            <span className="absolute bottom-[360px] left-[27px] top-7 w-px bg-ink/10" aria-hidden="true" />
+            <span data-steps-line className="absolute bottom-[360px] left-[27px] top-7 w-px origin-top bg-gradient-to-b from-gold-dark via-gold to-gold-light" aria-hidden="true" />
+            <ol className="space-y-6">
+              {STEPS.map((s) => (
+                <li key={s.n} data-step className="group relative flex gap-5 sm:gap-7">
+                  <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-gold/50 bg-sand font-serif text-xl text-gold-dark transition duration-500 group-hover:bg-navy-900 group-hover:text-gold-light">{s.n}</span>
+                  <div className="flex-1 rounded-[24px] border border-ink/[.06] bg-cream/80 p-6 transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_24px_50px_-32px_rgba(6,17,28,.4)] sm:p-7">
+                    <h3 className="font-serif text-[26px] font-semibold leading-tight text-ink sm:text-[28px]">{s.title}</h3>
+                    <p className="mt-2 text-[15px] font-light leading-relaxed text-ink/70">{s.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div data-fade className="mt-8 h-[300px] overflow-hidden rounded-[28px]">
+              <img src={PHOTOS.consult} alt="Dr. Darian mostrando ao paciente a anatomia do joelho em um tablet" className="h-full w-full object-cover object-[50%_45%] transition duration-[1.2s] hover:scale-[1.04]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 5. esporte */
+function Sport() {
+  const points = ['Diagnóstico rápido, sem espera desnecessária', 'Metas de retorno com prazo para cada etapa', 'Trabalho junto com fisioterapia e preparação física'];
+  return (
+    <section id="esporte" className="grain relative overflow-hidden bg-navy-950 py-24 text-cream sm:py-32">
+      <div className={`${C} relative z-[2] grid items-center gap-16 lg:grid-cols-12`}>
+        <div className="lg:col-span-5">
+          <Eyebrow light>Medicina do esporte</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] sm:text-[60px]" lines={['Da quadra do', 'Jaraguá Futsal', <>ao <Em light>consultório.</Em></>]} />
+          <p data-fade className="mt-6 text-[17px] font-light leading-relaxed text-cream/70">Dr. Darian chefia o departamento médico do Jaraguá Futsal, campeão da Liga Nacional de Futsal 2024. A rotina com atletas profissionais define o atendimento de todo paciente, do atleta de fim de semana a quem quer voltar a caminhar sem dor.</p>
+          <ul className="mt-8 space-y-3">
+            {points.map((p, i) => (
+              <li key={p} data-fade data-delay={i * .08} className="flex items-center gap-4 border-b border-cream/10 pb-3 text-[15.5px] text-cream/85">
+                <span className="font-serif text-lg text-gold-light">0{i + 1}</span>{p}
+              </li>
+            ))}
+          </ul>
+          <div data-fade className="mt-10"><GhostButton href={IG} external>Ver conteúdos no Instagram</GhostButton></div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 sm:h-[660px] sm:gap-5 lg:col-span-7">
+          <div className="group relative col-span-2 h-[480px] overflow-hidden rounded-[28px] shadow-2xl sm:col-span-1 sm:row-span-2 sm:h-auto">
+            <img src={PHOTOS.trophy} alt="Dr. Darian segurando o troféu de campeão da LNF 2024 na quadra da Arena Jaraguá" className="h-full w-full object-cover object-[45%_30%] transition duration-[1.2s] group-hover:scale-[1.04]" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 flex items-center gap-4 rounded-2xl border border-gold/30 bg-navy-900/75 px-5 py-4 backdrop-blur-xl">
+              <Trophy className="h-7 w-7 shrink-0 text-gold-light" />
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gold-light">Campeão LNF 2024</p>
+                <p className="mt-1 font-serif text-[22px] leading-tight">Departamento médico do Jaraguá Futsal</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 grid h-[230px] min-h-0 grid-cols-2 gap-4 sm:col-span-1 sm:row-span-2 sm:h-auto sm:grid-cols-1 sm:gap-5 sm:[grid-template-rows:minmax(0,1fr)_minmax(0,1.2fr)]">
+            <div className="group overflow-hidden rounded-[28px] shadow-2xl">
+              <img src={PHOTOS.team} alt="Elenco e comissão técnica do Jaraguá Futsal posados na quadra, com o Dr. Darian à direita" className="h-full w-full object-cover object-[70%_60%] transition duration-[1.2s] group-hover:scale-[1.04]" loading="lazy" />
+            </div>
+            <div className="group overflow-hidden rounded-[28px] border border-gold/30 shadow-2xl">
+              <img src={PHOTOS.athletes[2].src} alt={PHOTOS.athletes[2].alt} className="h-full w-full object-cover object-[50%_25%] transition duration-[1.2s] group-hover:scale-[1.04]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* atletas atendidos no consultório */}
+      <div className={`${C} relative z-[2] mt-24`}>
+        <div className="flex flex-col justify-between gap-4 border-t border-cream/10 pt-10 sm:flex-row sm:items-end">
+          <p data-fade className="font-serif text-[32px] leading-tight sm:text-[40px]">No consultório, <Em light>com o elenco.</Em></p>
+          <p data-fade className="max-w-[360px] text-[14.5px] font-light text-cream/60">Avaliação, prevenção e retorno de atletas profissionais do Jaraguá Futsal.</p>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+          {[PHOTOS.athletes[0], PHOTOS.athletes[1], PHOTOS.athletes[3], { src: PHOTOS.exam, alt: 'Dr. Darian examinando a perna de um paciente na maca' }].map((a, i) => (
+            <figure key={a.src} data-fade data-delay={i * .08} className={`group relative aspect-[4/5] overflow-hidden rounded-[24px]`}>
+              <img src={a.src} alt={a.alt} className="h-full w-full object-cover object-[50%_20%] transition duration-[1.2s] ease-out group-hover:scale-[1.06]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 5b. vídeo */
+function VideoSection() {
+  const ref = useRef(null);
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    const v = ref.current;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !reduce && v.muted) v.play().then(() => setPlaying(true)).catch(() => {});
+      if (!e.isIntersecting && !v.paused) { v.pause(); setPlaying(false); }
+    }, { threshold: .45 });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  const togglePlay = () => { const v = ref.current; if (v.paused) { v.play(); setPlaying(true); } else { v.pause(); setPlaying(false); } };
+  const listen = () => { const v = ref.current; v.muted = !v.muted; setMuted(v.muted); if (!v.muted) { v.currentTime = 0; v.play(); setPlaying(true); } };
+  return (
+    <section id="video" className="relative overflow-hidden bg-sand py-24 sm:py-32">
+      <div className={`${C} grid items-center gap-14 lg:grid-cols-12`}>
+        <div className="lg:col-span-5">
+          <Eyebrow>Em vídeo</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[60px]" lines={['Conheça o', 'Dr. Darian', <Em>antes da consulta.</Em>]} />
+          <p data-fade className="mt-6 text-[17px] font-light leading-relaxed text-ink/70">Um minuto com o médico que vai cuidar do seu joelho, direto do consultório em Jaraguá do Sul. Ative o som para ouvir.</p>
+          <div data-fade className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <button onClick={listen} className="group inline-flex min-h-[54px] items-center justify-center gap-3 whitespace-nowrap rounded-full bg-navy-900 px-8 text-[15px] font-medium text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-navy-700 active:scale-[.97]">
+              {muted ? <SoundOff className="h-5 w-5" /> : <SoundOn className="h-5 w-5" />}{muted ? 'Assistir com som' : 'Desativar som'}
+            </button>
+            <GhostButton href={IG} light={false} external>Mais vídeos no Instagram</GhostButton>
+          </div>
+        </div>
+
+        <div className="relative h-[560px] sm:h-[700px] lg:col-span-7">
+          <div data-img-reveal className="absolute right-0 top-0 hidden h-[86%] w-[62%] overflow-hidden rounded-[32px] sm:block">
+            <img src={PHOTOS.chandelier} alt="Dr. Darian de terno escuro em um hall com lustre" className="h-[115%] w-full object-cover object-[50%_20%]" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-navy-950/60 via-transparent to-transparent" />
+          </div>
+          <div data-fade className="absolute bottom-0 left-1/2 w-[300px] -translate-x-1/2 sm:left-[6%] sm:w-[330px] sm:translate-x-0">
+            <div className="relative overflow-hidden rounded-[42px] border-[8px] border-navy-950 bg-navy-950 shadow-[0_50px_100px_-30px_rgba(6,17,28,.7)]">
+              <video ref={ref} src={VIDEO.src} poster={VIDEO.poster} muted loop playsInline preload="metadata" className="aspect-[9/16] w-full object-cover" aria-label="Vídeo do Dr. Darian Boccacio no consultório" />
+              <span className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-navy-950/60 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-cream backdrop-blur">
+                <span className={`h-1.5 w-1.5 rounded-full ${playing ? 'animate-pulse bg-red-500' : 'bg-cream/60'}`} />Dr. Darian
+              </span>
+              <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
+                <button onClick={togglePlay} aria-label={playing ? 'Pausar vídeo' : 'Reproduzir vídeo'} className="grid h-12 w-12 place-items-center rounded-full bg-cream/90 text-navy-950 backdrop-blur transition hover:scale-105 active:scale-95">
+                  {playing ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                </button>
+                <button onClick={listen} aria-label={muted ? 'Ativar som' : 'Desativar som'} className="grid h-12 w-12 place-items-center rounded-full bg-navy-950/60 text-cream backdrop-blur transition hover:scale-105 active:scale-95">
+                  {muted ? <SoundOff className="h-5 w-5" /> : <SoundOn className="h-5 w-5" />}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 6. depoimentos */
+function Reviews() {
+  const Card = ({ r }) => (
+    <figure className="mx-3 flex w-[300px] shrink-0 flex-col rounded-[26px] border border-ink/[.06] bg-white p-7 shadow-[0_20px_50px_-35px_rgba(6,17,28,.35)] transition duration-500 hover:-translate-y-1.5 sm:w-[360px]">
+      <div className="flex items-start justify-between"><Stars /><span className="-mt-1 font-serif text-6xl leading-[0.6] text-gold/40">”</span></div>
+      <blockquote className="mt-5 flex-1 font-serif text-[21px] leading-snug text-ink">“{r.text}”</blockquote>
+      <figcaption className="mt-6 flex items-center gap-3">
+        <span className="grid h-10 w-10 place-items-center rounded-full bg-navy-900 font-medium text-gold-light">{r.name[0]}</span>
+        <span><span className="block text-[14px] font-medium text-ink">{r.name}</span><span className="block text-[12px] text-muted">Paciente · Doctoralia</span></span>
+      </figcaption>
+    </figure>
+  );
+  const half = Math.ceil(REVIEWS.length / 2);
+  const rows = [REVIEWS.slice(0, half), REVIEWS.slice(half)];
+  return (
+    <section id="depoimentos" className="relative overflow-hidden bg-cream py-24 sm:py-32">
+      <div className={`${C} flex flex-col justify-between gap-10 lg:flex-row lg:items-end`}>
+        <div className="max-w-[640px]">
+          <Eyebrow>Depoimentos</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[60px]" lines={['Quem passou pelo', <>consultório, <Em>recomenda.</Em></>]} />
+          <p data-fade className="mt-6 text-[17px] font-light leading-relaxed text-ink/70">Avaliações publicadas por pacientes no Doctoralia, a plataforma onde as consultas são avaliadas.</p>
+        </div>
+        <a data-fade href={DOCTORALIA} target="_blank" rel="noopener" className="group flex items-center gap-5 self-start rounded-3xl border border-ink/10 bg-white px-6 py-5 transition duration-500 hover:-translate-y-1 hover:shadow-xl lg:self-auto">
+          <span className="font-serif text-[56px] leading-none text-navy-900">5,0</span>
+          <span><Stars /><span className="mt-1 block text-[13px] text-muted">181 avaliações no Doctoralia</span><span className="mt-0.5 inline-flex items-center gap-1 text-[13px] font-medium text-gold-dark">ver todas <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" /></span></span>
+        </a>
+      </div>
+      <div className="mt-16 space-y-6 [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        {rows.map((r, i) => (
+          <div key={i} className="marquee flex overflow-hidden">
+            <div className={`marquee-track flex w-max py-3 ${i ? 'reverse' : ''}`} style={{ '--dur': i ? '70s' : '60s' }}>
+              {[...r, ...r].map((rv, j) => <Card key={j} r={rv} />)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 7. locais */
+function Places() {
+  const [tab, setTab] = useState('jgs');
+  const p = PLACES[tab];
+  return (
+    <section id="locais" className="relative bg-sand py-24 sm:py-32">
+      <div className={C}>
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-[640px]">
+            <Eyebrow>Locais de atendimento</Eyebrow>
+            <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[60px]" lines={['Atendimento em', <Em>duas cidades.</Em>]} />
+          </div>
+          <div data-fade role="tablist" aria-label="Cidade" className="inline-flex self-start rounded-full border border-ink/10 bg-cream p-1.5 lg:self-auto">
+            {Object.entries(PLACES).map(([k, v]) => (
+              <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
+                className={`min-h-[44px] rounded-full px-5 text-[14px] font-medium transition duration-500 ${tab === k ? 'bg-navy-900 text-cream shadow-lg' : 'text-ink/70 hover:text-ink'}`}>{v.city}</button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-5">
+          <div data-fade className="grain relative overflow-hidden rounded-[32px] bg-navy-950 p-8 text-cream sm:p-10 lg:col-span-2">
+            <div aria-hidden="true" className="spin-slow absolute -bottom-40 -right-40 h-[380px] w-[380px] rounded-full border border-gold/20" />
+            <div key={tab} className="fade-swap relative z-[2] flex h-full flex-col">
+              <p className="text-[10.5px] uppercase tracking-[0.3em] text-gold-light">Endereço</p>
+              <p className="mt-4 font-serif text-[46px] leading-[0.95] sm:text-[56px]">{p.city}</p>
+              <ul className="mt-8 space-y-5">
+                {p.items.map(it => (
+                  <li key={it.label} className="flex gap-4">
+                    <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cream/10 text-gold-light"><Pin className="h-4 w-4" /></span>
+                    <span><span className="block text-[15px] font-medium">{it.label}</span><span className="block text-[14px] font-light text-cream/65">{it.addr}</span></span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto grid gap-3 pt-10 sm:grid-cols-2">
+                <a href={p.map} target="_blank" rel="noopener" className="inline-flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-full bg-cream px-5 text-[12px] font-medium uppercase tracking-[0.14em] text-navy-950 transition hover:bg-gold-light active:scale-[.97]"><Nav className="h-4 w-4" />Como chegar</a>
+                <a href={WA} target="_blank" rel="noopener" className="inline-flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-full border border-cream/25 px-5 text-[12px] font-medium uppercase tracking-[0.14em] transition hover:border-gold-light hover:text-gold-light active:scale-[.97]"><WhatsAppIcon className="h-4 w-4" />Agendar aqui</a>
+              </div>
+            </div>
+          </div>
+          <div data-fade data-delay=".1" className="overflow-hidden rounded-[32px] border border-ink/10 bg-white p-2 shadow-[0_30px_60px_-40px_rgba(6,17,28,.45)] lg:col-span-3">
+            <iframe key={tab} title={`Mapa de ${p.city}`} src={`https://www.google.com/maps?q=${encodeURIComponent(p.embed)}&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+              className="fade-swap h-[360px] w-full rounded-[26px] grayscale-[35%] sm:h-[460px] lg:h-full lg:min-h-[460px]" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 8. dúvidas */
+function Faq() {
+  const [open, setOpen] = useState(0);
+  const bring = ['Exames de imagem anteriores (raio-x, ressonância)', 'Lista de medicamentos em uso', 'Relatórios de fisioterapia, se houver', 'Bermuda ou short para o exame do joelho'];
+  return (
+    <section id="duvidas" className="relative overflow-hidden bg-cream py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-0 h-[560px] w-[560px] rounded-full bg-[radial-gradient(circle,rgba(157,186,211,.25),transparent_65%)]" />
+      <div className={`${C} relative grid gap-14 lg:grid-cols-12`}>
+        <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+          <Eyebrow>Dúvidas frequentes</Eyebrow>
+          <Lines className="mt-4 font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.02em] text-ink sm:text-[56px]" lines={['Tudo o que você', <Em>precisa saber.</Em>]} />
+          <p data-fade className="mt-6 text-[17px] font-light leading-relaxed text-ink/70">Agendamento, tratamento e recuperação. Se a sua dúvida não estiver aqui, a equipe responde pelo WhatsApp.</p>
+          <div data-fade className="mt-10 rounded-[26px] border border-ink/[.08] bg-white/80 p-7">
+            <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-gold-dark"><FileText className="h-4 w-4" />Leve para a consulta</p>
+            <ul className="mt-5 space-y-3">
+              {bring.map(b => <li key={b} className="flex gap-3 text-[14.5px] font-light text-ink/75"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{b}</li>)}
+            </ul>
+          </div>
+        </div>
+        <div className="lg:col-span-8">
+          <ul className="border-t border-ink/10">
+            {FAQ.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <li key={f.q} data-fade data-delay={Math.min(i, 4) * .05} className="border-b border-ink/10">
+                  <button onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen} aria-controls={`faq-${i}`}
+                    className="group flex w-full items-center justify-between gap-6 py-7 text-left">
+                    <span className={`font-serif text-[24px] leading-snug transition-colors duration-300 sm:text-[28px] ${isOpen ? 'text-gold-dark' : 'text-ink group-hover:text-navy-700'}`}>{f.q}</span>
+                    <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border transition duration-500 ${isOpen ? 'rotate-[135deg] border-navy-900 bg-navy-900 text-gold-light' : 'border-ink/15 text-ink group-hover:border-navy-900'}`}><Plus className="h-4 w-4" /></span>
+                  </button>
+                  <div id={`faq-${i}`} className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                    <div className="overflow-hidden"><p className="max-w-[680px] pb-7 text-[16px] font-light leading-relaxed text-ink/70">{f.a}</p></div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ 9. chamada final + rodapé */
+function Cta() {
+  return (
+    <section id="agendar" className="grain relative isolate overflow-hidden bg-navy-950 py-28 text-center text-cream sm:py-40">
+      <img aria-hidden="true" alt="" src={PHOTOS.handshake} className="absolute inset-0 -z-20 h-full w-full object-cover object-[60%_35%] opacity-30" loading="lazy" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(16,38,60,.55),rgba(6,17,28,.92)_70%)]" />
+      {[420, 640, 880].map((s, i) => (
+        <span key={s} aria-hidden="true" className={`ring-breathe absolute left-1/2 top-1/2 -z-10 rounded-full border ${i === 2 ? 'border-dashed border-gold/15' : 'border-gold/20'}`} style={{ width: s, height: s, animationDelay: `${i * 1.2}s` }} />
+      ))}
+      <div className={`${C} relative z-[2]`}>
+        <Eyebrow light>Agende sua consulta</Eyebrow>
+        <Lines className="mx-auto mt-6 max-w-[860px] font-serif text-[46px] font-medium leading-[1.0] tracking-[-0.02em] sm:text-[76px]" lines={['Pronto para voltar a', <Em light>confiar no seu joelho?</Em>]} />
+        <p data-fade className="mx-auto mt-7 max-w-[520px] text-[17px] font-light leading-relaxed text-cream/70">Fale com a equipe pelo WhatsApp para agendar em Jaraguá do Sul ou São Bento do Sul.</p>
+        <div data-fade className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <GoldButton href={WA}>Agendar pelo WhatsApp</GoldButton>
+          <a href={IG} target="_blank" rel="noopener" className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full border border-cream/25 px-8 text-[15px] font-medium transition hover:border-gold-light hover:bg-cream hover:text-navy-950 active:scale-[.97]"><InstagramIcon className="h-[18px] w-[18px]" />@dr.darianboccacio</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-navy-950 pb-[max(2rem,env(safe-area-inset-bottom))] text-cream">
+      <div className={C}>
+        <span className="block h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+        <div className="grid gap-12 py-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <a href="#inicio" aria-label="Dr. Darian Boccacio, voltar ao início" className="inline-block transition hover:opacity-80"><img src="assets/logo-full.png" alt="Dr. Darian Boccacio · Cirurgia do joelho · Medicina esportiva" className="h-24 w-auto" /></a>
+            <p className="mt-6 max-w-[360px] text-[14px] font-light leading-relaxed text-cream/60">Ortopedia e Traumatologia com atuação em cirurgia do joelho e medicina do esporte. Jaraguá do Sul e São Bento do Sul, Santa Catarina.</p>
+            <div className="mt-6 flex gap-3">
+              <a href={IG} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-full border border-cream/20 transition hover:bg-cream hover:text-navy-950"><InstagramIcon className="h-4 w-4" /></a>
+              <a href={WA} target="_blank" rel="noopener" aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-full border border-cream/20 transition hover:bg-cream hover:text-navy-950"><WhatsAppIcon className="h-4 w-4" /></a>
+            </div>
+          </div>
+          <nav className="md:col-span-3" aria-label="Rodapé">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-gold">Navegação</p>
+            <ul className="mt-5 space-y-1">{NAV.map(([l, h]) => <li key={h}><a href={h} className="inline-flex min-h-[40px] items-center text-[14px] font-light text-cream/75 transition hover:translate-x-1 hover:text-gold-light">{l}</a></li>)}</ul>
+          </nav>
+          <div className="md:col-span-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-gold">Atendimento</p>
+            <ul className="mt-5 space-y-4 text-[14px] font-light text-cream/75">
+              <li className="flex gap-3"><Pin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><a href={PLACES.jgs.map} target="_blank" rel="noopener" className="hover:text-gold-light">Rua José Emmendoerfer, Nova Brasília<br />Jaraguá do Sul · SC</a></li>
+              <li className="flex gap-3"><Pin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><a href={PLACES.sbs.map} target="_blank" rel="noopener" className="hover:text-gold-light">São Bento do Sul · SC</a></li>
+              <li className="flex gap-3"><WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><a href={WA} target="_blank" rel="noopener" className="hover:text-gold-light">Agendamento pelo WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 border-t border-cream/10 py-6 text-[12px] font-light text-cream/50 md:flex-row md:justify-between">
+          <p>Responsável técnico: Dr. Darian Boccacio · CRM SC 13197 · RQE 10194 · Ortopedia e Traumatologia</p>
+          <p>Imagens dos cards de tratamento: Unsplash · © {new Date().getFullYear()}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FloatingWhatsApp({ show }) {
+  return (
+    <a href={WA} target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"
+      className={`fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_-8px_rgba(37,211,102,.6)] transition duration-700 hover:scale-110 sm:bottom-8 sm:right-8 ${show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0'}`}>
+      <span className="pulse-ring absolute inset-0 rounded-full bg-[#25D366]" />
+      <WhatsAppIcon className="relative h-7 w-7" />
+    </a>
+  );
+}
+
+/* ------------------------------------------------------------------ motion */
+function useMotion(ready) {
+  useLayoutEffect(() => {
+    if (!ready) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    let lenis, tick;
+    if (!reduce && window.Lenis) {
+      lenis = new Lenis({ lerp: 0.09 });
+      window.__lenis = lenis;
+      lenis.on('scroll', ScrollTrigger.update);
+      tick = (t) => lenis.raf(t * 1000);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+    }
+    // links internos com rolagem suave
+    const onClick = (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.4 });
+      else target.scrollIntoView();
+    };
+    document.addEventListener('click', onClick);
+
+    const ctx = gsap.context(() => {
+      // hero: entrada
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.from('[data-hero-img]', { scale: reduce ? 1 : 1.25, opacity: reduce ? 0 : 1, duration: reduce ? .6 : 2.4, ease: 'power3.out' })
+        .from('[data-hero-lines] .line > span', { yPercent: reduce ? 0 : 115, opacity: reduce ? 0 : 1, duration: 1.3, stagger: .12 }, .15)
+        .from('[data-hero-fade]', { y: reduce ? 0 : 26, opacity: 0, duration: 1.1, stagger: .1 }, .55);
+      if (!reduce) {
+        gsap.to('[data-hero-parallax]', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '#inicio', start: 'top top', end: 'bottom top', scrub: true } });
+      }
+
+      // títulos: linhas sobem da máscara
+      gsap.utils.toArray('[data-lines]').forEach((el) => {
+        gsap.from(el.querySelectorAll('.line > span'), { yPercent: reduce ? 0 : 115, opacity: reduce ? 0 : 1, duration: 1.2, ease: 'expo.out', stagger: .1, scrollTrigger: { trigger: el, start: 'top 88%' } });
+      });
+      // blocos
+      gsap.utils.toArray('[data-fade]').forEach((el) => {
+        gsap.from(el, { y: reduce ? 0 : 34, opacity: 0, duration: 1, ease: 'power3.out', delay: parseFloat(el.dataset.delay || 0), scrollTrigger: { trigger: el, start: 'top 90%' } });
+      });
+      // linhas douradas
+      gsap.utils.toArray('[data-draw]').forEach((el) => gsap.from(el, { scaleX: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
+      // fotos: cortina que abre + zoom
+      gsap.utils.toArray('[data-img-reveal]').forEach((el) => {
+        const im = el.querySelector('img');
+        const t = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 85%' } });
+        t.from(el, { clipPath: reduce ? 'inset(0% 0% 0% 0%)' : 'inset(100% 0% 0% 0%)', opacity: reduce ? 0 : 1, duration: 1.4, ease: 'expo.inOut' })
+         .from(im, { scale: reduce ? 1 : 1.35, duration: 1.8, ease: 'expo.out' }, .15);
+        if (!reduce) gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+      // números
+      gsap.utils.toArray('[data-count]').forEach((el) => {
+        const end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || 0, 10), o = { v: 0 };
+        const fmt = (v) => dec ? v.toFixed(dec).replace('.', ',') : Math.round(v).toLocaleString('pt-BR');
+        el.textContent = fmt(0);
+        gsap.to(o, { v: end, duration: reduce ? .01 : 2.2, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 90%' }, onUpdate: () => (el.textContent = fmt(o.v)) });
+      });
+      // etapas: linha dourada desenha com a rolagem
+      const steps = document.querySelector('[data-steps]');
+      if (steps) {
+        gsap.fromTo('[data-steps-line]', { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: steps, start: 'top 70%', end: 'bottom 75%', scrub: reduce ? false : .6 } });
+        gsap.utils.toArray('[data-step]').forEach((el) => gsap.from(el, { x: reduce ? 0 : 40, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
+      }
+      if (!reduce) {
+        // colagem do esporte em velocidades diferentes
+        gsap.utils.toArray('[data-speed]').forEach((el) => gsap.fromTo(el, { yPercent: -parseFloat(el.dataset.speed) }, { yPercent: parseFloat(el.dataset.speed), ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+        // faixa: inclina com a velocidade da rolagem
+        const skew = document.querySelector('[data-skew]');
+        if (skew) {
+          const set = gsap.quickTo(skew, 'skewX', { duration: .6, ease: 'power3.out' });
+          ScrollTrigger.create({ onUpdate: (s) => set(gsap.utils.clamp(-10, 10, s.getVelocity() / -300)) });
+        }
+      }
+    });
+    const refresh = () => ScrollTrigger.refresh();
+    requestAnimationFrame(refresh);
+    window.addEventListener('load', refresh);
+    return () => { ctx.revert(); document.removeEventListener('click', onClick); window.removeEventListener('load', refresh); if (lenis) { gsap.ticker.remove(tick); lenis.destroy(); } window.__lenis = null; };
+  }, [ready]);
+}
+
+/* ------------------------------------------------------------------ app */
+function App() {
+  const [ready, setReady] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  useMotion(ready);
+  return (
+    <>
+      <a href="#sobre" className="skip rounded-full bg-gold px-5 py-3 font-medium text-navy-950">Pular para o conteúdo</a>
+      {!loaded && <Preloader onReveal={() => setReady(true)} onDone={() => setLoaded(true)} />}
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Treatments />
+        <Marquee />
+        <Surgery />
+        <Sport />
+        <VideoSection />
+        <Reviews />
+        <Places />
+        <Faq />
+        <Cta />
+      </main>
+      <Footer />
+      <FloatingWhatsApp show={loaded} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
